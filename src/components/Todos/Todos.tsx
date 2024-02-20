@@ -7,7 +7,7 @@ const Todos = () => {
   if (isLoading) {
     return (
       <Box sx={{width: '300px', margin: '0 auto'}}>
-        <Typography variant="h3">Loading...</Typography>
+        <Typography variant="h5">Loading...</Typography>
         <LinearProgress />
       </Box>
     );

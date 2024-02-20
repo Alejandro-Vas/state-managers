@@ -6,7 +6,7 @@ function BearCounter() {
 
   return (
     <>
-      <Typography variant="h3">bears count = {bears}</Typography>
+      <Typography variant="h5">bears count = {bears}</Typography>
 
       <Button variant="contained" color="success" onClick={increasePopulation}>
         add 🐻
