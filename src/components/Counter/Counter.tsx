@@ -1,18 +1,20 @@
 import {Button, Typography} from '@mui/material';
-import {useEffect, useState} from 'react';
-import {decrement, increment, vanillaStore as store} from '../../store/redux/vanilla';
+// import {useEffect, useState} from 'react';
+import {decrement, increment, incrementBy, vanillaStore as store} from '../../store/redux/vanilla';
 
 const Counter = () => {
-  const [, updateState] = useState({});
+  // const [, updateState] = useState({});
 
-  useEffect(() => {
-    const unsubscribe = store.subscribe(() => {
-      updateState({});
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const unsubscribe = store.subscribe(() => {
+  //     updateState({});
+  //   });
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
+
+  const count = store.getState();
 
   const handleIncrement = () => {
     store.dispatch(increment());
@@ -22,7 +24,9 @@ const Counter = () => {
     store.dispatch(decrement());
   };
 
-  const count = store.getState();
+  const handleIncrementByCount = () => {
+    store.dispatch(incrementBy(count));
+  };
 
   return (
     <div>
@@ -32,7 +36,11 @@ const Counter = () => {
         Increment
       </Button>
 
-      <Button variant="outlined" onClick={handleDecrement} sx={{ml: 2}}>
+      <Button variant="contained" onClick={handleIncrementByCount} sx={{ml: 2}}>
+        Increment By Count
+      </Button>
+
+      <Button variant="outlined" onClick={handleDecrement} color="error" sx={{ml: 2}}>
         Decrement
       </Button>
     </div>
