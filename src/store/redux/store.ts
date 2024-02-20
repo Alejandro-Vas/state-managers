@@ -11,10 +11,10 @@ export const increment = (): Action => ({type: 'INCREMENT'});
 export const decrement = (): Action => ({type: 'DECREMENT'});
 export const incrementBy = (payload: number): Action => ({type: 'INCREMENT_BY', payload});
 
-type State = number;
+export type RootState = number;
 
 // reducer - чистая функция, которая получает текущий state и action для его изменения
-const counterReducer = (state: State = 0, action: Action): State => {
+const counterReducer = (state: RootState = 0, action: Action): RootState => {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1;
@@ -31,18 +31,18 @@ const counterReducer = (state: State = 0, action: Action): State => {
 };
 
 type Store = {
-  getState: () => State;
+  getState: () => RootState;
   dispatch: (action: Action) => void;
   subscribe: (listener: () => void) => () => void;
 };
 
 // store - функция, возвращающая текущий state и функцию (dispatch) для его изменения и
 // функцию подписки на изменение state (subscribe)
-const createStore = (reducer: (state: State, action: Action) => State): Store => {
-  let state: State = 0;
+const createStore = (reducer: (state: RootState, action: Action) => RootState): Store => {
+  let state: RootState = 0;
   let listeners: Array<() => void> = [];
 
-  const getState = (): State => state;
+  const getState = (): RootState => state;
 
   const dispatch = (action: Action): void => {
     state = reducer(state, action);
@@ -59,4 +59,4 @@ const createStore = (reducer: (state: State, action: Action) => State): Store =>
   return {getState, dispatch, subscribe};
 };
 
-export const vanillaStore = createStore(counterReducer);
+export const store = createStore(counterReducer);

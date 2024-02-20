@@ -1,18 +1,18 @@
+import {useEffect, useState} from 'react';
 import {Button, Typography} from '@mui/material';
-// import {useEffect, useState} from 'react';
-import {decrement, increment, incrementBy, vanillaStore as store} from '../../store/redux/vanilla';
+import {decrement, increment, incrementBy, store} from '../../store/redux/store';
 
 const Counter = () => {
-  // const [, updateState] = useState({});
+  const [, updateState] = useState({});
 
-  // useEffect(() => {
-  //   const unsubscribe = store.subscribe(() => {
-  //     updateState({});
-  //   });
-  //   return () => {
-  //     unsubscribe();
-  //   };
-  // }, []);
+  useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      updateState({});
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   const count = store.getState();
 
