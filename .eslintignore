@@ -1,0 +1,5 @@
+!resources/react
+!resources/react_mocks
+!tooling/scripts
+!tooling/webpack-config
+public/*

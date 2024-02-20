@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@npmtg/eslint-config-studiotg-react",
+    "@npmtg/eslint-config-studiotg-react/typescript"
+  ]
+}
