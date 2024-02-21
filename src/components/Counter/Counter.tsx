@@ -1,33 +1,14 @@
-import {useEffect, useState} from 'react';
 import {Button, Typography} from '@mui/material';
-import {decrement, increment, incrementBy, store} from '../../store/redux/store';
 
-const Counter = () => {
-  const [, updateState] = useState({});
+type CounterProps = {
+  handleIncrement: () => void;
+  handleDecrement: () => void;
+  handleIncrementByCount: () => void;
+  count: number;
+};
 
-  useEffect(() => {
-    const unsubscribe = store.subscribe(() => {
-      updateState({});
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-
-  const count = store.getState();
-
-  const handleIncrement = () => {
-    store.dispatch(increment());
-  };
-
-  const handleDecrement = () => {
-    store.dispatch(decrement());
-  };
-
-  const handleIncrementByCount = () => {
-    store.dispatch(incrementBy(count));
-  };
-
+const Counter = (props: CounterProps) => {
+  const {handleDecrement, handleIncrement, handleIncrementByCount, count} = props;
   return (
     <div>
       <Typography variant="h5">Counter: {count}</Typography>

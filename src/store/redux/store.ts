@@ -59,4 +59,4 @@ const createStore = (reducer: (state: RootState, action: Action) => RootState): 
   return {getState, dispatch, subscribe};
 };
 
-export const store = createStore(counterReducer);
+export const store = Object.freeze(createStore(counterReducer));

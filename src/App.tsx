@@ -1,25 +1,32 @@
 import {Typography} from '@mui/material';
 import './App.css';
 import {BearCounter, LegacyCounter, Todos} from './components';
-import Counter from './components/Counter/Counter';
+import CustomCounter from './components/CustomCounter/CustomCounter';
 import {Provider} from 'react-redux';
 import {store} from './store/redux/store';
 
+const styles = {mt: 10};
+
 function App() {
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Provider store={store as any}>
-      <Typography variant="h4">REDUX</Typography>
-      <Counter />
-      <LegacyCounter />
+    <>
+      <Typography variant="h4">Custom Redux</Typography>
+      <CustomCounter />
 
-      <Typography variant="h4" sx={{mt: 10}}>
+      <Provider store={store as never}>
+        <Typography variant="h4" sx={styles}>
+          HOC REDUX
+        </Typography>
+        <LegacyCounter />
+      </Provider>
+
+      <Typography variant="h4" sx={styles}>
         ZUSTAND
       </Typography>
       <BearCounter />
       <BearCounter />
       <Todos />
-    </Provider>
+    </>
   );
 }
 
