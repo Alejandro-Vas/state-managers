@@ -1,6 +1,6 @@
 import {create} from 'zustand';
 
-const API_URL = 'https://jsonplaceholder.typicode.com/todos';
+const API_URL = 'https://jsonplaceholder.typicode.com/todos?_limit=10';
 
 type BearStoreType = {
   bears: number;

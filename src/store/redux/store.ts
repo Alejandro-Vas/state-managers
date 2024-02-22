@@ -36,8 +36,8 @@ type Store = {
   subscribe: (listener: () => void) => () => void;
 };
 
-// store - функция, возвращающая текущий state и функцию (dispatch) для его изменения и
-// функцию подписки на изменение state (subscribe)
+// store - функция, возвращающая методы получения текущего state, (dispatch) для его изменения и
+// метод подписки на изменение state (subscribe)
 const createStore = (reducer: (state: RootState, action: Action) => RootState): Store => {
   let state: RootState = 0;
   let listeners: Array<() => void> = [];

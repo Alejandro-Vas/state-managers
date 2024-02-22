@@ -1,31 +1,29 @@
-import {Typography} from '@mui/material';
-import './App.css';
-import {BearCounter, LegacyCounter, Todos} from './components';
+import {AccordionSection, BearCounter, LegacyCounter, Todos} from './components';
 import CustomCounter from './components/CustomCounter/CustomCounter';
 import {Provider} from 'react-redux';
 import {store} from './store/redux/store';
-
-const styles = {mt: 10};
+import './App.css';
 
 function App() {
   return (
     <>
-      <Typography variant="h4">Custom Redux</Typography>
-      <CustomCounter />
+      <AccordionSection title="Custom Redux">
+        <CustomCounter />
+      </AccordionSection>
 
-      <Provider store={store as never}>
-        <Typography variant="h4" sx={styles}>
-          HOC REDUX
-        </Typography>
-        <LegacyCounter />
-      </Provider>
+      <AccordionSection title="HOC Redux">
+        <Provider store={store as never}>
+          <LegacyCounter />
+        </Provider>
+      </AccordionSection>
 
-      <Typography variant="h4" sx={styles}>
-        ZUSTAND
-      </Typography>
-      <BearCounter />
-      <BearCounter />
-      <Todos />
+      <AccordionSection title="Zustand">
+        <>
+          <BearCounter />
+          <BearCounter />
+          <Todos />
+        </>
+      </AccordionSection>
     </>
   );
 }
