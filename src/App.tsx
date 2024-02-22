@@ -1,4 +1,11 @@
-import {AccordionSection, BearCounter, LegacyCounter, RTKCounter, Todos} from './components';
+import {
+  AccordionSection,
+  BearCounter,
+  LegacyCounter,
+  RTKCounter,
+  RTKDataFetch,
+  Todos,
+} from './components';
 import CustomCounter from './components/CustomCounter/CustomCounter';
 import {Provider} from 'react-redux';
 import {store as customStore} from './store/redux/store';
@@ -21,6 +28,7 @@ function App() {
       <AccordionSection title="RTK">
         <Provider store={RTKStore}>
           <RTKCounter />
+          <RTKDataFetch />
         </Provider>
       </AccordionSection>
 

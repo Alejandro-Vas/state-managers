@@ -5,3 +5,4 @@ export {default as LegacyCounter} from './LegacyCounter/LegacyCounter';
 export {default as Counter} from './Counter/Counter';
 export {default as AccordionSection} from './AccordionSection/AccordionSection';
 export {default as RTKCounter} from './RTKCounter/RTKCounter';
+export {default as RTKDataFetch} from './RTKDataFetch/RTKDataFetch';
