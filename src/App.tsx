@@ -33,16 +33,16 @@ function App() {
         </Provider>
       </AccordionSection>
 
+      <AccordionSection title="MobX">
+        <MobxCounter />
+      </AccordionSection>
+
       <AccordionSection title="Zustand">
         <>
           <BearCounter />
           <BearCounter />
           <Todos />
         </>
-      </AccordionSection>
-
-      <AccordionSection title="MobX">
-        <MobxCounter />
       </AccordionSection>
     </>
   );
