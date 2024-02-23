@@ -2,6 +2,7 @@ import {
   AccordionSection,
   BearCounter,
   LegacyCounter,
+  MobxCounter,
   RTKCounter,
   RTKDataFetch,
   Todos,
@@ -38,6 +39,10 @@ function App() {
           <BearCounter />
           <Todos />
         </>
+      </AccordionSection>
+
+      <AccordionSection title="MobX">
+        <MobxCounter />
       </AccordionSection>
     </>
   );

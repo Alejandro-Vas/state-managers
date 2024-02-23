@@ -6,3 +6,4 @@ export {default as Counter} from './Counter/Counter';
 export {default as AccordionSection} from './AccordionSection/AccordionSection';
 export {default as RTKCounter} from './RTKCounter/RTKCounter';
 export {default as RTKDataFetch} from './RTKDataFetch/RTKDataFetch';
+export {default as MobxCounter} from './MobxCounter/MobxCounter';
