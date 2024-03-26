@@ -12,6 +12,7 @@ import {Provider} from 'react-redux';
 import {store as customStore} from './store/redux/store';
 import {store as RTKStore} from './store/RTK/store';
 import './App.css';
+import {Store} from 'redux';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       </AccordionSection>
 
       <AccordionSection title="HOC Redux">
-        <Provider store={customStore as never}>
+        <Provider store={customStore as Store}>
           <LegacyCounter />
         </Provider>
       </AccordionSection>
